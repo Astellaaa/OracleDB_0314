@@ -24,10 +24,10 @@ public interface MemoRepository extends JpaRepository<Memo, Long> {
     void deleteMemoByMnoLessThanEqual(Long mno);
 
 //    @Query Native SQL 문 실행 방법
-    @Query(value = "select * from tbl_memo where mno > 70", nativeQuery = true)
+    @Query(value = "select * from tbl_memo where mno >= 70", nativeQuery = true)
     List<Memo> getNativeResult();
 
-    @Query(value = "select * from tbl_memo where mno > 80", nativeQuery = true)
-    List<Memo> getNativeResult2();
+    @Query(value = "select * from tbl_memo where mno >= 80", nativeQuery = true)
+    List<Object[]> getNativeResult2();
 
 }
